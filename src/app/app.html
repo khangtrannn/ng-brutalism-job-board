@@ -1,0 +1,275 @@
+<!-- NAV ═══════════════════════════════════════════════════ -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <span class="logo-badge">NB</span>
+      <div class="logo-text">
+        <span class="logo-name">NG-BRUTALISM</span>
+        <span class="logo-sub">JOBS</span>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a class="nav-link nav-link--active" href="#">Browse Jobs</a></li>
+      <li><a class="nav-link" href="#">For Employers</a></li>
+      <li><a class="nav-link" href="#">About Us</a></li>
+    </ul>
+    <button nbButton class="post-job-btn">Post a Job ↗</button>
+  </div>
+</nav>
+
+<!-- HERO ═══════════════════════════════════════════════════ -->
+<header class="site-header">
+  <div class="hero-inner">
+
+    <div class="hero-content">
+      <p class="header-eyebrow">15 Components · 1 Install · Open Source</p>
+
+      <h1 class="hero-title">
+        <span class="hero-line">Find your</span>
+        <span nbTitle class="hero-keyword" style="--nb-title-wave-color: #7c5cfc;">dream</span>
+        <span class="hero-line">job worldwide</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Discover remote-friendly and on-site opportunities<br>
+        from awesome teams around the world.
+      </p>
+
+      <div class="search-row">
+        <nb-input-group class="search-input-group">
+          <span nbInputPrefix align="center">🔍</span>
+          <input nbInput placeholder="Search jobs, companies, roles…" aria-label="Search jobs" />
+        </nb-input-group>
+        <button nbButton size="lg" class="filter-btn">Filter ▼</button>
+      </div>
+
+      <div class="popular-tags">
+        <span class="popular-label">Popular:</span>
+        <span class="tag-pill">Angular</span>
+        <span class="tag-pill">TypeScript</span>
+        <span class="tag-pill">Full-time</span>
+        <span class="tag-pill">Remote</span>
+        <span class="tag-pill tag-pill--more">+ More</span>
+      </div>
+    </div>
+
+    <div class="hero-illustration" aria-hidden="true">
+      <span class="deco-star ds-1">✦</span>
+      <span class="deco-star ds-2">★</span>
+      <span class="deco-star ds-3">✦</span>
+      <span class="deco-star ds-4">★</span>
+      <div class="globe-wrapper">
+        <span class="globe-pin">📍</span>
+        <div class="globe-sphere"></div>
+        <div class="opp-sticker">
+          <span>OPPORTUNITIES</span>
+          <span>EVERYWHERE</span>
+        </div>
+        <span class="globe-suitcase">💼</span>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<!-- MARQUEE ════════════════════════════════════════════════ -->
+<div class="marquee-wrap">
+  <nb-marquee duration="32s">
+    <nb-marquee-item>
+      <span class="mq-item">
+        <span class="mq-icon mq-icon-mint">🌐</span>REMOTE-FRIENDLY
+      </span>
+      <span class="mq-sep">|</span>
+      <span class="mq-item">
+        <span class="mq-icon mq-icon-pink">👥</span>ANGULAR DEVS WANTED
+      </span>
+      <span class="mq-sep">|</span>
+      <span class="mq-item">
+        <span class="mq-icon mq-icon-mint">&lt;/&gt;</span>OPEN SOURCE ROLES
+      </span>
+      <span class="mq-sep">|</span>
+      <span class="mq-sparkle">✦</span>
+      <span class="mq-sep">|</span>
+    </nb-marquee-item>
+  </nb-marquee>
+</div>
+
+<!-- STATS BAR ══════════════════════════════════════════════ -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-card">
+      <div class="stat-icon" style="background:#b8a4ff">⚡</div>
+      <div class="stat-text">
+        <span class="stat-title">15+ Components</span>
+        <span class="stat-sub">Built for Angular.</span>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon" style="background:#ffd24a">📦</div>
+      <div class="stat-text">
+        <span class="stat-title">Easy to Install</span>
+        <span class="stat-sub">Just 1 command.</span>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon" style="background:#99e8c8">🔓</div>
+      <div class="stat-text">
+        <span class="stat-title">Open Source</span>
+        <span class="stat-sub">MIT Licensed.</span>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon" style="background:#ff7eb6">👥</div>
+      <div class="stat-text">
+        <span class="stat-title">Community Driven</span>
+        <span class="stat-sub">Built by devs, for devs.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT ═══════════════════════════════════════════ -->
+<div class="content-layout">
+
+  <!-- Jobs column -->
+  <div class="jobs-column">
+
+    <div class="positions-header">
+      <h2 class="positions-title">
+        <span class="positions-open">Open</span> Positions
+      </h2>
+      <div class="positions-meta">
+        <span class="positions-count">{{ jobs.length }} roles · Updated today</span>
+        <div class="sort-wrapper">
+          <select class="sort-select">
+            <option>Newest</option>
+            <option>Salary</option>
+            <option>Relevance</option>
+          </select>
+          <span class="sort-arrow">▼</span>
+        </div>
+      </div>
+    </div>
+
+    <main class="job-grid">
+      @for (job of jobs; track job.id) {
+        <nb-card [style.background]="job.color" class="job-card">
+          <nb-card-header class="card-header">
+            <div class="logo-box">
+              <nb-image-card [image]="job.logo" [alt]="job.company + ' logo'" />
+            </div>
+            <div class="job-meta">
+              <span class="company-label">{{ job.company }}</span>
+              <nb-card-title class="job-title">{{ job.title }}</nb-card-title>
+            </div>
+            <button class="bookmark-btn" aria-label="Save job">⊡</button>
+          </nb-card-header>
+          <nb-card-content class="card-content">
+            <div class="badge-row">
+              @for (badge of job.badges; track badge.label) {
+                <span nbBadge [variant]="badge.variant">{{ badge.label }}</span>
+              }
+            </div>
+            <div class="recruiter-row">
+              <nb-avatar [src]="job.avatar" [alt]="job.recruiter" />
+              <span class="recruiter-name">{{ job.recruiter }}</span>
+            </div>
+          </nb-card-content>
+          <nb-card-actions class="card-actions">
+            <button nbButton (click)="openDialog(job.title)" class="apply-btn">Apply Now</button>
+            <button nbButton variant="neutral" size="icon" aria-label="Save job" class="save-btn">♥</button>
+          </nb-card-actions>
+        </nb-card>
+      }
+    </main>
+  </div>
+
+  <!-- FAQ Sidebar -->
+  <aside class="faq-sidebar">
+    <div class="faq-panel">
+      <div class="faq-panel-header">
+        <h2 class="faq-title">Frequently Asked<br>Questions</h2>
+        <span class="faq-badge">?</span>
+      </div>
+      <nb-accordion type="single" [collapsible]="true">
+        <nb-accordion-item value="why">
+          <nb-accordion-trigger>Why join us?</nb-accordion-trigger>
+          <nb-accordion-content>
+            <p>We help developers find meaningful roles and connect with amazing teams worldwide.</p>
+          </nb-accordion-content>
+        </nb-accordion-item>
+        <nb-accordion-item value="how">
+          <nb-accordion-trigger>How it works</nb-accordion-trigger>
+          <nb-accordion-content>
+            <p>Browse roles, hit Apply Now, fill the one-page form. Your application goes directly to the hiring manager within 24 hours.</p>
+          </nb-accordion-content>
+        </nb-accordion-item>
+        <nb-accordion-item value="stack">
+          <nb-accordion-trigger>What's the tech stack?</nb-accordion-trigger>
+          <nb-accordion-content>
+            <p>Built with <strong>ng-brutalism</strong> — 15 neo-brutalist Angular components. One command: <code>ng add @ng-brutalism/ui</code>.</p>
+          </nb-accordion-content>
+        </nb-accordion-item>
+      </nb-accordion>
+      <button nbButton class="view-faqs-btn">View all FAQs ↗</button>
+    </div>
+    <span class="sidebar-star">★</span>
+  </aside>
+
+</div>
+
+<!-- DIALOG ═════════════════════════════════════════════════ -->
+<nb-dialog #dialogRef>
+  <h2 nbDialogTitle>Apply for {{ selectedJob() }}</h2>
+  <p nbDialogDescription>Fill out the form — we'll get back to you within 24 hours.</p>
+
+  <nb-dialog-content class="dialog-form">
+
+    <div class="form-field">
+      <label nbLabel for="applicant-name">Name</label>
+      <nb-input-group>
+        <input nbInput id="applicant-name" [(ngModel)]="name" placeholder="Your full name" />
+      </nb-input-group>
+    </div>
+
+    <div class="form-field">
+      <label nbLabel for="applicant-email">Email</label>
+      <nb-input-group>
+        <input nbInput id="applicant-email" type="email" [(ngModel)]="email" placeholder="you@example.com" />
+      </nb-input-group>
+    </div>
+
+    <div class="form-field">
+      <label nbLabel>Role / Department</label>
+      <nb-select [(value)]="role" placeholder="Select department">
+        <nb-select-option value="engineering">Engineering</nb-select-option>
+        <nb-select-option value="design">Design</nb-select-option>
+        <nb-select-option value="product">Product</nb-select-option>
+        <nb-select-option value="marketing">Marketing</nb-select-option>
+        <nb-select-option value="devrel">Developer Relations</nb-select-option>
+      </nb-select>
+    </div>
+
+    <div class="form-field">
+      <label nbLabel for="cover-letter">Cover Letter</label>
+      <textarea
+        nbTextarea
+        id="cover-letter"
+        rows="4"
+        [(ngModel)]="coverLetter"
+        placeholder="Tell us about yourself and why you're a great fit…"
+      ></textarea>
+    </div>
+
+    <div class="checkbox-row">
+      <input nbCheckbox type="checkbox" id="terms" [(ngModel)]="agreed" />
+      <label for="terms">I agree to the terms and conditions</label>
+    </div>
+
+  </nb-dialog-content>
+
+  <nb-dialog-actions>
+    <button nbButton nbDialogClose>Cancel</button>
+    <button nbButton [disabled]="!agreed">Submit Application</button>
+  </nb-dialog-actions>
+</nb-dialog>

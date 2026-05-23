@@ -2,7 +2,7 @@
 <nav class="site-nav">
   <div class="nav-inner">
     <div class="nav-logo">
-      <span class="logo-badge">NB</span>
+      <img src="https://ngbrutalism.khangtran.dev/logo.png" alt="ng-brutalism logo" class="logo-img" />
       <div class="logo-text">
         <span class="logo-name">NG-BRUTALISM</span>
         <span class="logo-sub">JOBS</span>
@@ -37,7 +37,7 @@
 
       <div class="search-row">
         <nb-input-group class="search-input-group">
-          <span nbInputPrefix align="center">🔍</span>
+          <span nbInputPrefix align="center" class="search-prefix-sym">S</span>
           <input nbInput placeholder="Search jobs, companies, roles…" aria-label="Search jobs" />
         </nb-input-group>
         <button nbButton size="lg" class="filter-btn">Filter ▼</button>
@@ -57,15 +57,35 @@
       <span class="deco-star ds-1">✦</span>
       <span class="deco-star ds-2">★</span>
       <span class="deco-star ds-3">✦</span>
-      <span class="deco-star ds-4">★</span>
-      <div class="globe-wrapper">
-        <span class="globe-pin">📍</span>
-        <div class="globe-sphere"></div>
-        <div class="opp-sticker">
-          <span>OPPORTUNITIES</span>
-          <span>EVERYWHERE</span>
+
+      <div class="card-mockup">
+        <div class="cm-bar">
+          <span class="cm-dot" style="background:#ff4f8a"></span>
+          <span class="cm-dot" style="background:#ffd24a"></span>
+          <span class="cm-dot" style="background:#99e8c8"></span>
+          <span class="cm-title">FEATURED ROLE</span>
         </div>
-        <span class="globe-suitcase">💼</span>
+        <div class="cm-body">
+          <div class="cm-company-row">
+            <div class="cm-logo">G</div>
+            <div class="cm-info">
+              <span class="cm-company">GOOGLE</span>
+              <span class="cm-role">Senior Angular Developer</span>
+            </div>
+            <span class="cm-new">NEW</span>
+          </div>
+          <div class="cm-tags">
+            <span class="cm-tag" style="background:#99e8c8">REMOTE</span>
+            <span class="cm-tag" style="background:#ffd24a">$150K+</span>
+            <span class="cm-tag" style="background:#b8a4ff">FULL-TIME</span>
+          </div>
+          <div class="cm-apply">APPLY NOW ↗</div>
+        </div>
+      </div>
+
+      <div class="counter-sticker">
+        <span class="cs-num">247</span>
+        <span class="cs-label">OPEN ROLES</span>
       </div>
     </div>
 
@@ -98,28 +118,28 @@
 <div class="stats-bar">
   <div class="stats-inner">
     <div class="stat-card">
-      <div class="stat-icon" style="background:#b8a4ff">⚡</div>
+      <div class="stat-icon" style="background:#b8a4ff"><span class="stat-sym">&lt;/&gt;</span></div>
       <div class="stat-text">
         <span class="stat-title">15+ Components</span>
         <span class="stat-sub">Built for Angular.</span>
       </div>
     </div>
     <div class="stat-card">
-      <div class="stat-icon" style="background:#ffd24a">📦</div>
+      <div class="stat-icon" style="background:#ffd24a"><span class="stat-sym">$ _</span></div>
       <div class="stat-text">
         <span class="stat-title">Easy to Install</span>
         <span class="stat-sub">Just 1 command.</span>
       </div>
     </div>
     <div class="stat-card">
-      <div class="stat-icon" style="background:#99e8c8">🔓</div>
+      <div class="stat-icon" style="background:#99e8c8"><span class="stat-sym">MIT</span></div>
       <div class="stat-text">
         <span class="stat-title">Open Source</span>
         <span class="stat-sub">MIT Licensed.</span>
       </div>
     </div>
     <div class="stat-card">
-      <div class="stat-icon" style="background:#ff7eb6">👥</div>
+      <div class="stat-icon" style="background:#ff7eb6"><span class="stat-sym">//</span></div>
       <div class="stat-text">
         <span class="stat-title">Community Driven</span>
         <span class="stat-sub">Built by devs, for devs.</span>
@@ -217,6 +237,83 @@
   </aside>
 
 </div>
+
+<!-- FOOTER ═════════════════════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="https://ngbrutalism.khangtran.dev/logo.png" alt="ng-brutalism logo" class="footer-logo-img" />
+        <div class="footer-logo-text">
+          <span class="footer-logo-name">NG-BRUTALISM</span>
+          <span class="footer-logo-sub">JOBS</span>
+        </div>
+      </div>
+      <p class="footer-tagline">
+        The neo-brutalist Angular<br>job board. Find your next<br>role. Build something bold.
+      </p>
+      <div class="footer-socials">
+        <a href="#" class="social-pill" aria-label="GitHub">GH</a>
+        <a href="#" class="social-pill" aria-label="Twitter">TW</a>
+        <a href="#" class="social-pill" aria-label="LinkedIn">LI</a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <div class="footer-col">
+        <span class="footer-col-heading">For Job Seekers</span>
+        <ul class="footer-list">
+          <li><a href="#" class="footer-link">Browse Jobs</a></li>
+          <li><a href="#" class="footer-link">Remote Roles</a></li>
+          <li><a href="#" class="footer-link">Saved Jobs</a></li>
+          <li><a href="#" class="footer-link">Career Advice</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-heading">For Employers</span>
+        <ul class="footer-list">
+          <li><a href="#" class="footer-link">Post a Job</a></li>
+          <li><a href="#" class="footer-link">Talent Search</a></li>
+          <li><a href="#" class="footer-link">Pricing</a></li>
+          <li><a href="#" class="footer-link">Employer FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-heading">Company</span>
+        <ul class="footer-list">
+          <li><a href="#" class="footer-link">About Us</a></li>
+          <li><a href="#" class="footer-link">Blog</a></li>
+          <li><a href="#" class="footer-link">Privacy</a></li>
+          <li><a href="#" class="footer-link">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-newsletter">
+      <span class="footer-col-heading">Stay in the loop</span>
+      <p class="newsletter-copy">Weekly digest of the best Angular jobs, straight to your inbox.</p>
+      <div class="newsletter-row">
+        <nb-input-group class="newsletter-input-group">
+          <input nbInput placeholder="you@example.com" aria-label="Email for newsletter" />
+        </nb-input-group>
+        <button nbButton class="newsletter-btn">→</button>
+      </div>
+      <div class="newsletter-badge">
+        <span class="nb-badge-label">POWERED BY</span>
+        <span class="nb-badge-value">ng-brutalism</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <span class="footer-copy">© 2025 NG-BRUTALISM JOBS. ALL RIGHTS RESERVED.</span>
+      <span class="footer-madewidth">BUILT WITH <a href="https://ngbrutalism.khangtran.dev" class="footer-lib-link" target="_blank" rel="noopener">NG-BRUTALISM ↗</a></span>
+    </div>
+  </div>
+</footer>
 
 <!-- DIALOG ═════════════════════════════════════════════════ -->
 <nb-dialog #dialogRef>

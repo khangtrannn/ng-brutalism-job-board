@@ -128,14 +128,14 @@ export class App {
     },
     {
       id: 3,
-      title: 'DevOps Engineer',
-      company: 'Vercel',
-      logo: 'https://assets.vercel.com/image/upload/front/favicon/vercel/57x57.png',
+      title: 'Angular Library Maintainer',
+      company: 'ng-brutalism',
+      logo: 'https://ngbrutalism.khangtran.dev/logo.png',
       avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Jordan',
       recruiter: 'Jordan Lee',
       color: '#ffd24a',
       badges: [
-        { label: 'Contract', variant: 'default' },
+        { label: 'Open Source', variant: 'default' },
         { label: 'Remote', variant: 'secondary' },
       ],
     },

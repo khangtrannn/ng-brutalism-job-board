@@ -1,7 +1,7 @@
 /* ── NAV ──────────────────────────────────────────────────── */
 .site-nav {
   background: #fffaf0;
-  border-bottom: 3px solid #000;
+  border-bottom: 4px solid #000;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -10,7 +10,7 @@
 .nav-inner {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 14px 32px;
+  padding: 10px 32px;
   display: flex;
   align-items: center;
   gap: 32px;
@@ -25,8 +25,8 @@
 }
 
 .logo-img {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
   border: 3px solid #000;
   border-radius: 0;
@@ -40,7 +40,7 @@
 
 .logo-name {
   font-family: 'Archivo Black', sans-serif;
-  font-size: 0.85rem;
+  font-size: 1.15rem;
   font-weight: 900;
   letter-spacing: 0.02em;
   color: #000;
@@ -48,9 +48,9 @@
 
 .logo-sub {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.65rem;
-  font-weight: 700;
-  color: rgba(0, 0, 0, 0.5);
+  font-size: 0.78rem;
+  font-weight: 900;
+  color: #000;
   letter-spacing: 0.1em;
 }
 
@@ -68,15 +68,23 @@
   text-decoration: none;
   font-family: 'Space Grotesk', sans-serif;
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 800;
   color: #000;
-  padding-bottom: 2px;
+  padding: 4px 8px;
   cursor: pointer;
 }
 
+.nav-link:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 3px;
+}
+
 .nav-link--active {
-  border-bottom: 3px solid #ffd24a;
-  padding-bottom: 1px;
+  background: #ffd24a;
+  border: 2.5px solid #000;
+  box-shadow: 2px 2px 0 0 #000;
+  padding: 4px 10px;
 }
 
 .post-job-btn {
@@ -120,7 +128,7 @@
   padding: 0.3rem 1rem;
   background: #b8a4ff;
   border: 3px solid #000;
-  box-shadow: 3px 3px 0 0 rgba(255, 255, 255, 0.15);
+  box-shadow: 5px 5px 0 0 rgba(255, 255, 255, 0.3);
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.68rem;
   font-weight: 700;
@@ -153,9 +161,9 @@
 .hero-subtitle {
   margin: 0 0 28px;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.65;
-  color: rgba(255, 255, 255, 0.78);
+  color: #ffffff;
 }
 
 .search-row {
@@ -191,8 +199,8 @@
 .popular-label {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.72rem;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.55);
+  font-weight: 900;
+  color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -217,15 +225,15 @@
 }
 
 .tag-pill--more {
-  color: rgba(255, 255, 255, 0.55);
-  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  border-color: #ffffff;
 }
 
 /* ── HERO ILLUSTRATION ────────────────────────────────────── */
 .hero-illustration {
   position: relative;
   flex-shrink: 0;
-  width: 360px;
+  width: 460px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -242,10 +250,10 @@
 
 /* card mockup */
 .card-mockup {
-  width: 310px;
+  width: 400px;
   background: #fffaf0;
-  border: 3px solid rgba(255, 255, 255, 0.55);
-  box-shadow: 8px 8px 0 0 #ffd24a;
+  border: 3px solid #fff;
+  box-shadow: 10px 10px 0 0 #ffd24a;
   overflow: hidden;
 }
 
@@ -290,8 +298,8 @@
 }
 
 .cm-logo {
-  width: 50px;
-  height: 50px;
+  width: 68px;
+  height: 68px;
   background: #4285f4;
   border: 3px solid #000;
   box-shadow: 3px 3px 0 0 #000;
@@ -299,7 +307,7 @@
   align-items: center;
   justify-content: center;
   font-family: 'Archivo Black', sans-serif;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 900;
   color: #fff;
   flex-shrink: 0;
@@ -316,15 +324,15 @@
 .cm-company {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.6rem;
-  font-weight: 700;
+  font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: rgba(0, 0, 0, 0.5);
+  color: #000;
 }
 
 .cm-role {
   font-family: 'Archivo Black', sans-serif;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   font-weight: 900;
   text-transform: uppercase;
   color: #000;
@@ -381,11 +389,11 @@
 .counter-sticker {
   position: absolute;
   bottom: 10%;
-  right: -8px;
+  right: -16px;
   background: #ff7eb6;
-  border: 3px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 5px 5px 0 0 rgba(255, 255, 255, 0.12);
-  padding: 12px 16px;
+  border: 3px solid #000;
+  box-shadow: 6px 6px 0 0 #000;
+  padding: 16px 22px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -394,7 +402,7 @@
 
 .cs-num {
   font-family: 'Archivo Black', sans-serif;
-  font-size: 2rem;
+  font-size: 2.6rem;
   font-weight: 900;
   color: #000;
   line-height: 1;
@@ -402,31 +410,34 @@
 
 .cs-label {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.5rem;
-  font-weight: 700;
+  font-size: 0.6rem;
+  font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: rgba(0, 0, 0, 0.65);
+  color: #000;
   white-space: nowrap;
 }
 
 /* ── MARQUEE ──────────────────────────────────────────────── */
 .marquee-wrap {
-  background: #ffffff;
-  border-bottom: 3px solid #000;
-  padding: 14px 0;
+  background: #ffd24a;
+  border-top: 4px solid #000;
+  border-bottom: 4px solid #000;
   font-family: 'JetBrains Mono', monospace;
   font-weight: 700;
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: #000;
+  --nb-marquee-bg: #ffd24a;
+  --nb-bg: #ffd24a;
 }
 
 .mq-item {
   display: inline-flex;
   align-items: center;
   margin: 0 18px;
+  padding: 14px 0;
 }
 
 .mq-icon {
@@ -449,21 +460,21 @@
 
 .mq-sep {
   margin: 0 18px;
-  color: rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.45);
   font-size: 1.1rem;
 }
 
 .mq-sparkle {
   font-size: 1.4rem;
-  color: #ffd24a;
+  color: #ff4f8a;
   margin: 0 18px;
-  -webkit-text-stroke: 1px #000;
 }
 
 /* ── STATS BAR ────────────────────────────────────────────── */
 .stats-bar {
   background: #faf3df;
-  border-bottom: 3px solid #000;
+  border-top: 4px solid #000;
+  border-bottom: 4px solid #000;
   padding: 20px 32px;
 }
 
@@ -481,7 +492,7 @@
   gap: 14px;
   background: #fffaf0;
   border: 3px solid #000;
-  box-shadow: 4px 4px 0 0 #000;
+  box-shadow: 5px 5px 0 0 #000;
   padding: 14px 16px;
 }
 
@@ -512,7 +523,8 @@
 .stat-sub {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.68rem;
-  color: rgba(0, 0, 0, 0.55);
+  font-weight: 700;
+  color: #000;
 }
 
 .stat-sym {
@@ -539,7 +551,7 @@
 .content-layout {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 32px 32px 64px;
+  padding: 40px 32px 64px;
   display: flex;
   gap: 28px;
   align-items: flex-start;
@@ -557,6 +569,8 @@
   justify-content: space-between;
   gap: 16px;
   margin-bottom: 20px;
+  border-left: 5px solid #000;
+  padding-left: 16px;
 }
 
 .positions-title {
@@ -569,10 +583,8 @@
 }
 
 .positions-open {
-  text-decoration: underline;
-  text-decoration-color: #ffd24a;
-  text-decoration-thickness: 4px;
-  text-underline-offset: 4px;
+  background: #ffd24a;
+  padding: 0 4px;
 }
 
 .positions-meta {
@@ -584,10 +596,23 @@
 .positions-count {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.72rem;
-  font-weight: 600;
-  color: rgba(0, 0, 0, 0.5);
+  font-weight: 800;
+  color: #000;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.now-hiring-stamp {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #fff;
+  background: #000;
+  padding: 4px 9px;
+  border: 2px solid #000;
   white-space: nowrap;
 }
 
@@ -630,18 +655,18 @@
 .job-card {
   border-radius: 0 !important;
   border: 3px solid #000 !important;
-  box-shadow: 5px 5px 0 0 #000 !important;
-  transition: transform 120ms ease, box-shadow 120ms ease;
+  box-shadow: 6px 6px 0 0 #000 !important;
+  transition: transform 60ms linear, box-shadow 60ms linear;
   overflow: visible !important;
 }
 
 .job-card:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 7px 7px 0 0 #000 !important;
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 0 #000 !important;
 }
 
 .job-card:active {
-  transform: translate(2px, 2px);
+  transform: translate(3px, 3px);
   box-shadow: 3px 3px 0 0 #000 !important;
 }
 
@@ -653,10 +678,11 @@
 
 .logo-box {
   flex-shrink: 0;
-  width: 52px;
-  height: 52px;
+  width: 60px;
+  height: 60px;
   background: #fff;
-  border: 2px solid #000;
+  border: 2.5px solid #000;
+  box-shadow: 3px 3px 0 0 #000;
   border-radius: 0;
   overflow: hidden;
   display: flex;
@@ -664,12 +690,11 @@
   justify-content: center;
 }
 
-.logo-box nb-image-card {
+.company-logo-img {
   width: 100%;
   height: 100%;
-  border: none !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
+  object-fit: contain;
+  display: block;
 }
 
 .job-meta {
@@ -683,10 +708,10 @@
 .company-label {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.62rem;
-  font-weight: 700;
+  font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: rgba(0, 0, 0, 0.55);
+  color: #000;
 }
 
 .job-title {
@@ -698,6 +723,25 @@
   letter-spacing: -0.01em;
   word-break: break-word;
   color: #000;
+}
+
+.company-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.posted-stamp {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.52rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #000;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1.5px solid rgba(0, 0, 0, 0.4);
+  padding: 1px 5px;
+  white-space: nowrap;
 }
 
 .bookmark-btn {
@@ -714,14 +758,15 @@
   font-size: 0.9rem;
   padding: 0;
   color: #000;
-  box-shadow: 2px 2px 0 0 #000;
-  transition: transform 100ms ease, box-shadow 100ms ease;
+  box-shadow: 3px 3px 0 0 #000;
+  transition: none;
   align-self: flex-start;
 }
 
 .bookmark-btn:hover {
-  transform: translate(-1px, -1px);
-  box-shadow: 3px 3px 0 0 #000;
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 0 #000;
+  background: #ffd24a;
 }
 
 .card-content {
@@ -736,6 +781,23 @@
   gap: 6px;
 }
 
+.salary-row {
+  display: flex;
+  align-items: center;
+}
+
+.salary-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 900;
+  color: #000;
+  letter-spacing: 0.02em;
+  background: rgba(255, 255, 255, 0.45);
+  border: 2px solid #000;
+  box-shadow: 2px 2px 0 0 #000;
+  padding: 3px 10px;
+}
+
 .recruiter-row {
   display: flex;
   align-items: center;
@@ -745,15 +807,17 @@
   font-weight: 700;
 }
 
-.recruiter-name { color: rgba(0, 0, 0, 0.7); }
+.recruiter-name { color: #000; font-weight: 800; }
 
 .card-actions {
   display: flex;
   align-items: center;
   gap: 8px;
+  border-top: 3px solid #000;
 }
 
 .apply-btn {
+  flex: 1;
   font-family: 'Archivo Black', sans-serif;
   text-transform: uppercase;
   font-size: 0.78rem;
@@ -797,16 +861,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   background: #ff7eb6;
   border: 3px solid #000;
-  box-shadow: 3px 3px 0 0 #000;
+  box-shadow: 4px 4px 0 0 #000;
   font-family: 'Archivo Black', sans-serif;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 900;
   color: #000;
   flex-shrink: 0;
+  transform: rotate(4deg);
 }
 
 .view-faqs-btn {
@@ -859,8 +924,8 @@
 }
 
 .footer-logo-img {
-  width: 38px;
-  height: 38px;
+  width: 58px;
+  height: 58px;
   object-fit: contain;
   border: 3px solid rgba(255,255,255,0.4);
 }
@@ -873,7 +938,7 @@
 
 .footer-logo-name {
   font-family: 'Archivo Black', sans-serif;
-  font-size: 0.85rem;
+  font-size: 1.15rem;
   font-weight: 900;
   letter-spacing: 0.02em;
   color: #ffffff;
@@ -881,9 +946,9 @@
 
 .footer-logo-sub {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.65rem;
-  font-weight: 700;
-  color: rgba(255,255,255,0.45);
+  font-size: 0.78rem;
+  font-weight: 900;
+  color: #ffffff;
   letter-spacing: 0.1em;
 }
 
@@ -891,8 +956,9 @@
   margin: 0;
   font-family: 'Space Grotesk', sans-serif;
   font-size: 0.9rem;
+  font-weight: 700;
   line-height: 1.65;
-  color: rgba(255,255,255,0.62);
+  color: #ffffff;
 }
 
 .footer-socials {
@@ -904,23 +970,25 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  border: 2px solid rgba(255,255,255,0.35);
+  width: 38px;
+  height: 38px;
+  border: 2.5px solid #ffffff;
   background: transparent;
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.62rem;
-  font-weight: 700;
+  font-weight: 900;
   letter-spacing: 0.05em;
-  color: rgba(255,255,255,0.7);
+  color: #ffffff;
   text-decoration: none;
-  transition: border-color 120ms ease, color 120ms ease, background 120ms ease;
+  box-shadow: 3px 3px 0 0 rgba(255,255,255,0.4);
+  transition: none;
 }
 
 .social-pill:hover {
   border-color: #ffd24a;
-  color: #ffd24a;
-  background: rgba(255,210,74,0.08);
+  color: #000;
+  background: #ffd24a;
+  box-shadow: 3px 3px 0 0 rgba(255,210,74,0.4);
 }
 
 /* link columns */
@@ -960,13 +1028,15 @@
   text-decoration: none;
   font-family: 'Space Grotesk', sans-serif;
   font-size: 0.88rem;
-  font-weight: 500;
-  color: rgba(255,255,255,0.65);
-  transition: color 120ms ease;
+  font-weight: 700;
+  color: #ffffff;
 }
 
 .footer-link:hover {
   color: #ffffff;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
 }
 
 /* newsletter */
@@ -980,8 +1050,9 @@
   margin: 0;
   font-family: 'Space Grotesk', sans-serif;
   font-size: 0.85rem;
+  font-weight: 700;
   line-height: 1.6;
-  color: rgba(255,255,255,0.62);
+  color: #ffffff;
 }
 
 .newsletter-row {
@@ -1009,17 +1080,18 @@
   align-items: center;
   gap: 8px;
   padding: 6px 12px;
-  border: 2px solid rgba(255,255,255,0.15);
-  background: rgba(255,255,255,0.04);
+  border: 2.5px solid rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.07);
   align-self: flex-start;
+  box-shadow: 3px 3px 0 0 rgba(255,255,255,0.1);
 }
 
 .nb-badge-label {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.58rem;
-  font-weight: 700;
+  font-weight: 900;
   letter-spacing: 0.12em;
-  color: rgba(255,255,255,0.4);
+  color: #ffffff;
   text-transform: uppercase;
 }
 
@@ -1032,7 +1104,7 @@
 
 /* bottom bar */
 .footer-bottom {
-  border-top: 2px solid rgba(255,255,255,0.1);
+  border-top: 3px solid rgba(255,255,255,0.3);
 }
 
 .footer-bottom-inner {
@@ -1049,20 +1121,20 @@
 .footer-madewidth {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.62rem;
-  font-weight: 600;
+  font-weight: 800;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.35);
+  color: #ffffff;
 }
 
 .footer-lib-link {
   color: #99e8c8;
   text-decoration: none;
-  transition: color 120ms ease;
 }
 
 .footer-lib-link:hover {
   color: #ffffff;
+  text-decoration: underline;
 }
 
 /* ── FOOTER RESPONSIVE ────────────────────────────────────── */
@@ -1086,6 +1158,39 @@
   .footer-newsletter { grid-column: 1; }
   .footer-links { grid-template-columns: repeat(2, 1fr); gap: 24px; }
   .footer-bottom-inner { flex-direction: column; align-items: flex-start; gap: 8px; padding: 16px 20px; }
+}
+
+/* ── DIALOG HEADER ────────────────────────────────────────── */
+.dialog-header {
+  background: #ffd24a;
+  border-bottom: 3px solid #000;
+  padding: 1.5rem 1.5rem 1.25rem;
+}
+
+.dialog-eyebrow {
+  display: inline-block;
+  background: #111;
+  color: #ffd24a;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  margin-bottom: 10px;
+}
+
+.dialog-header [data-slot="dialog-title"] {
+  padding: 0;
+  font-size: 1.6rem;
+  line-height: 1.15;
+  color: #111;
+}
+
+.dialog-header [data-slot="dialog-description"] {
+  padding: 0.5rem 0 0;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 0.82rem;
 }
 
 /* ── DIALOG FORM ──────────────────────────────────────────── */

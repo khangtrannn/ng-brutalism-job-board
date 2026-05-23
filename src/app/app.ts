@@ -21,7 +21,6 @@ import {
   NbDialogContent,
   NbDialogDescription,
   NbDialogTitle,
-  NbImageCard,
   NbInput,
   NbInputGroup,
   NbInputPrefix,
@@ -47,6 +46,8 @@ interface Job {
   avatar: string;
   recruiter: string;
   color: string;
+  salary: string;
+  posted: string;
   badges: Badge[];
 }
 
@@ -69,7 +70,6 @@ interface Job {
     NbCardTitle,
     NbCardContent,
     NbCardActions,
-    NbImageCard,
     NbAvatar,
     NbBadge,
     NbMarquee,
@@ -107,6 +107,8 @@ export class App {
       avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Alex',
       recruiter: 'Alex Kim',
       color: '#99e8c8',
+      salary: '$140K – $180K',
+      posted: '1d ago',
       badges: [
         { label: 'Full-time', variant: 'success' },
         { label: 'Remote', variant: 'secondary' },
@@ -121,6 +123,8 @@ export class App {
       avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah',
       recruiter: 'Sarah Chen',
       color: '#ff7eb6',
+      salary: '$110K – $140K',
+      posted: '3d ago',
       badges: [
         { label: 'Full-time', variant: 'success' },
         { label: 'Hybrid', variant: 'warning' },
@@ -134,6 +138,8 @@ export class App {
       avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Jordan',
       recruiter: 'Jordan Lee',
       color: '#ffd24a',
+      salary: 'Volunteer / Equity',
+      posted: 'Just posted',
       badges: [
         { label: 'Open Source', variant: 'default' },
         { label: 'Remote', variant: 'secondary' },
@@ -147,6 +153,8 @@ export class App {
       avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Maya',
       recruiter: 'Maya Patel',
       color: '#b8a4ff',
+      salary: '$90K – $120K',
+      posted: '2d ago',
       badges: [
         { label: 'Part-time', variant: 'warning' },
         { label: 'Remote', variant: 'secondary' },

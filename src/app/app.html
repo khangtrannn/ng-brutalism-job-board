@@ -97,11 +97,11 @@
   <nb-marquee duration="32s">
     <nb-marquee-item>
       <span class="mq-item">
-        <span class="mq-icon mq-icon-mint">🌐</span>REMOTE-FRIENDLY
+        <span class="mq-icon mq-icon-mint">◉</span>REMOTE-FRIENDLY
       </span>
       <span class="mq-sep">|</span>
       <span class="mq-item">
-        <span class="mq-icon mq-icon-pink">👥</span>ANGULAR DEVS WANTED
+        <span class="mq-icon mq-icon-pink">&#123;&#125;</span>ANGULAR DEVS WANTED
       </span>
       <span class="mq-sep">|</span>
       <span class="mq-item">
@@ -160,6 +160,7 @@
       </h2>
       <div class="positions-meta">
         <span class="positions-count">{{ jobs.length }} roles · Updated today</span>
+        <span class="now-hiring-stamp">● LIVE</span>
         <div class="sort-wrapper">
           <select class="sort-select">
             <option>Newest</option>
@@ -176,19 +177,29 @@
         <nb-card [style.background]="job.color" class="job-card">
           <nb-card-header class="card-header">
             <div class="logo-box">
-              <nb-image-card [image]="job.logo" [alt]="job.company + ' logo'" />
+              <img [src]="job.logo" [alt]="job.company + ' logo'" class="company-logo-img" />
             </div>
             <div class="job-meta">
-              <span class="company-label">{{ job.company }}</span>
+              <div class="company-meta-row">
+                <span class="company-label">{{ job.company }}</span>
+                <span class="posted-stamp">{{ job.posted }}</span>
+              </div>
               <nb-card-title class="job-title">{{ job.title }}</nb-card-title>
             </div>
-            <button class="bookmark-btn" aria-label="Save job">⊡</button>
+            <button class="bookmark-btn" aria-label="Save job">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square">
+                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+              </svg>
+            </button>
           </nb-card-header>
           <nb-card-content class="card-content">
             <div class="badge-row">
               @for (badge of job.badges; track badge.label) {
                 <span nbBadge [variant]="badge.variant">{{ badge.label }}</span>
               }
+            </div>
+            <div class="salary-row">
+              <span class="salary-value">{{ job.salary }}</span>
             </div>
             <div class="recruiter-row">
               <nb-avatar [src]="job.avatar" [alt]="job.recruiter" />
@@ -317,8 +328,11 @@
 
 <!-- DIALOG ═════════════════════════════════════════════════ -->
 <nb-dialog #dialogRef>
-  <h2 nbDialogTitle>Apply for {{ selectedJob() }}</h2>
-  <p nbDialogDescription>Fill out the form — we'll get back to you within 24 hours.</p>
+  <div class="dialog-header">
+    <span class="dialog-eyebrow">Open Position</span>
+    <h2 nbDialogTitle>{{ selectedJob() }}</h2>
+    <p nbDialogDescription>Fill out the form — we'll get back to you within 24 hours.</p>
+  </div>
 
   <nb-dialog-content class="dialog-form">
 

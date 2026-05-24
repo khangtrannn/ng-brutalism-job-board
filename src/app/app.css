@@ -650,14 +650,18 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  align-items: stretch;
 }
 
 .job-card {
-  border-radius: 0 !important;
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  border-radius: 14px !important;
   border: 3px solid #000 !important;
   box-shadow: 6px 6px 0 0 #000 !important;
   transition: transform 60ms linear, box-shadow 60ms linear;
-  overflow: visible !important;
+  overflow: hidden !important;
 }
 
 .job-card:hover {
@@ -670,20 +674,63 @@
   box-shadow: 3px 3px 0 0 #000 !important;
 }
 
+/* decorative dot pattern */
+.card-dot-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 55%;
+  height: 100%;
+  background-image: radial-gradient(circle, rgba(0,0,0,0.13) 2px, transparent 2px);
+  background-size: 13px 13px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* decorative sparkles */
+.card-sparkle {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  font-size: 1.1rem;
+  z-index: 1;
+}
+
+.spark-top {
+  top: 14px;
+  right: 64px;
+  color: #3dd9c0;
+  font-size: 1rem;
+}
+
+.spark-bottom {
+  bottom: 68px;
+  right: 18px;
+  color: #ffd24a;
+  font-size: 1.6rem;
+}
+
+/* card header — only the logo row, height is always consistent */
 .card-header {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.card-top-row {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
+  gap: 10px;
 }
 
 .logo-box {
   flex-shrink: 0;
-  width: 60px;
-  height: 60px;
+  width: 64px;
+  height: 64px;
   background: #fff;
   border: 2.5px solid #000;
   box-shadow: 3px 3px 0 0 #000;
-  border-radius: 0;
+  border-radius: 4px;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -697,134 +744,295 @@
   display: block;
 }
 
-.job-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  min-width: 0;
+.header-meta {
   flex: 1;
-}
-
-.company-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.62rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #000;
-}
-
-.job-title {
-  font-family: 'Archivo Black', sans-serif !important;
-  font-size: 1rem !important;
-  font-weight: 900 !important;
-  line-height: 1.15 !important;
-  text-transform: uppercase;
-  letter-spacing: -0.01em;
-  word-break: break-word;
-  color: #000;
+  min-width: 0;
 }
 
 .company-meta-row {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.company-label {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #000;
 }
 
 .posted-stamp {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.52rem;
+  font-size: 0.58rem;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: #000;
-  background: rgba(255, 255, 255, 0.5);
-  border: 1.5px solid rgba(0, 0, 0, 0.4);
-  padding: 1px 5px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 2px solid #000;
+  padding: 2px 8px;
   white-space: nowrap;
 }
 
 .bookmark-btn {
   flex-shrink: 0;
-  margin-left: auto;
-  background: rgba(255, 255, 255, 0.6);
-  border: 2px solid #000;
-  width: 32px;
-  height: 32px;
+  background: #fff;
+  border: 2.5px solid #000;
+  box-shadow: 3px 3px 0 0 #000;
+  width: 40px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 0.9rem;
-  padding: 0;
   color: #000;
-  box-shadow: 3px 3px 0 0 #000;
-  transition: none;
+  padding: 0;
   align-self: flex-start;
+  transition: none;
 }
 
 .bookmark-btn:hover {
+  background: #ffd24a;
   transform: translate(-2px, -2px);
   box-shadow: 5px 5px 0 0 #000;
-  background: #ffd24a;
 }
 
+.job-title {
+  font-family: 'Archivo Black', sans-serif !important;
+  font-size: 1.4rem !important;
+  font-weight: 900 !important;
+  line-height: 1.1 !important;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: #000;
+  margin: 0 !important;
+  padding: 0 !important;
+  word-break: break-word;
+}
+
+.job-desc {
+  margin: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.7);
+  line-height: 1.6;
+}
+
+/* card content — flex column, grows to fill remaining space */
 .card-content {
+  position: relative;
+  z-index: 1;
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 !important;
+  gap: 0 !important;
+}
+
+.title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* grows to absorb extra space, pushing details to the bottom */
+.card-spacer {
+  flex: 1;
+  min-height: 16px;
+}
+
+.card-details {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
+/* pill badges */
 .badge-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
 }
 
-.salary-row {
+.job-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  border: 2.5px solid #000;
+  box-shadow: 2px 2px 0 0 #000;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #000;
+}
+
+.job-pill--warning  { background: #ff9a3c; }
+.job-pill--secondary { background: #3ddcca; }
+.job-pill--success  { background: #5bcd74; }
+.job-pill--danger   { background: #ff4f8a; color: #fff; }
+.job-pill--default  { background: rgba(255,255,255,0.75); }
+
+/* salary box */
+.salary-box {
   display: flex;
   align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 2.5px solid #000;
+  box-shadow: 3px 3px 0 0 #000;
+  padding: 10px 14px;
 }
 
-.salary-value {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.78rem;
+.salary-icon-circle {
+  width: 40px;
+  height: 40px;
+  background: #b8a4ff;
+  border: 2.5px solid #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #000;
+}
+
+.salary-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.salary-amount {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 1rem;
   font-weight: 900;
   color: #000;
-  letter-spacing: 0.02em;
-  background: rgba(255, 255, 255, 0.45);
-  border: 2px solid #000;
-  box-shadow: 2px 2px 0 0 #000;
-  padding: 3px 10px;
+  line-height: 1.2;
 }
 
+.salary-period {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.65);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+/* recruiter row */
 .recruiter-row {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.78rem;
-  font-weight: 700;
+  gap: 12px;
 }
 
-.recruiter-name { color: #000; font-weight: 800; }
+.recruiter-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
 
-.card-actions {
+.recruiter-name-line {
   display: flex;
   align-items: center;
-  gap: 8px;
-  border-top: 3px solid #000;
+  gap: 6px;
+}
+
+.recruiter-name {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #000;
+}
+
+.verified-icon {
+  display: flex;
+  align-items: center;
+}
+
+.recruiter-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.65);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* card actions strip — pinned to bottom */
+.card-actions {
+  position: relative;
+  z-index: 1;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  border-top: 3px solid #000 !important;
+  background: rgba(0, 0, 0, 0.08) !important;
+  padding: 12px !important;
+  flex-shrink: 0;
 }
 
 .apply-btn {
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #ffd24a;
+  border: 2.5px solid #000;
+  box-shadow: 3px 3px 0 0 #000;
+  padding: 10px 16px;
   font-family: 'Archivo Black', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 900;
   text-transform: uppercase;
-  font-size: 0.78rem;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.06em;
+  color: #000;
+  cursor: pointer;
+  transition: none;
 }
 
-.save-btn { font-size: 1rem; }
+.apply-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 0 #000;
+}
+
+.apply-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 0 #000;
+}
+
+.save-btn {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  background: #fff;
+  border: 2.5px solid #000;
+  box-shadow: 3px 3px 0 0 #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #000;
+  padding: 0;
+  border-radius: 0;
+  transition: none;
+}
+
+.save-btn:hover {
+  background: #ff7eb6;
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 0 #000;
+}
 
 /* ── FAQ SIDEBAR ──────────────────────────────────────────── */
 .faq-sidebar {

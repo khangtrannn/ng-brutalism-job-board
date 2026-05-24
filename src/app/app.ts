@@ -6,14 +6,12 @@ import {
   NbAccordionItem,
   NbAccordionTrigger,
   NbAvatar,
-  NbBadge,
   NbBadgeVariant,
   NbButton,
   NbCard,
   NbCardActions,
   NbCardContent,
   NbCardHeader,
-  NbCardTitle,
   NbCheckbox,
   NbDialog,
   NbDialogActions,
@@ -36,6 +34,7 @@ import {
 interface Badge {
   label: string;
   variant: NbBadgeVariant;
+  icon: 'clock' | 'globe' | 'lightning' | 'code';
 }
 
 interface Job {
@@ -45,8 +44,11 @@ interface Job {
   logo: string;
   avatar: string;
   recruiter: string;
+  recruiterTitle: string;
+  description: string;
   color: string;
   salary: string;
+  salaryMeta: string;
   posted: string;
   badges: Badge[];
 }
@@ -67,11 +69,9 @@ interface Job {
     NbCheckbox,
     NbCard,
     NbCardHeader,
-    NbCardTitle,
     NbCardContent,
     NbCardActions,
     NbAvatar,
-    NbBadge,
     NbMarquee,
     NbMarqueeItem,
     NbDialog,
@@ -106,13 +106,16 @@ export class App {
       logo: 'https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png',
       avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Alex',
       recruiter: 'Alex Kim',
+      recruiterTitle: 'ENGINEERING LEAD',
+      description: 'Build world-class web experiences for billions of Google users worldwide.',
       color: '#99e8c8',
       salary: '$140K – $180K',
+      salaryMeta: 'USD · YEARLY',
       posted: '1d ago',
       badges: [
-        { label: 'Full-time', variant: 'success' },
-        { label: 'Remote', variant: 'secondary' },
-        { label: 'Urgent', variant: 'danger' },
+        { label: 'Full-time', variant: 'success', icon: 'clock' },
+        { label: 'Remote', variant: 'secondary', icon: 'globe' },
+        { label: 'Urgent', variant: 'danger', icon: 'lightning' },
       ],
     },
     {
@@ -122,12 +125,15 @@ export class App {
       logo: 'https://static.figma.com/app/icon/1/icon-192.png',
       avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah',
       recruiter: 'Sarah Chen',
+      recruiterTitle: 'DESIGN DIRECTOR',
+      description: 'Shape the future of design tools used by millions of creators daily.',
       color: '#ff7eb6',
       salary: '$110K – $140K',
+      salaryMeta: 'USD · YEARLY',
       posted: '3d ago',
       badges: [
-        { label: 'Full-time', variant: 'success' },
-        { label: 'Hybrid', variant: 'warning' },
+        { label: 'Full-time', variant: 'success', icon: 'clock' },
+        { label: 'Hybrid', variant: 'warning', icon: 'globe' },
       ],
     },
     {
@@ -137,12 +143,15 @@ export class App {
       logo: 'https://ngbrutalism.khangtran.dev/logo.png',
       avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Jordan',
       recruiter: 'Jordan Lee',
+      recruiterTitle: 'OPEN SOURCE LEAD',
+      description: 'Help shape the go-to neo-brutalist component library for Angular devs.',
       color: '#ffd24a',
       salary: 'Volunteer / Equity',
+      salaryMeta: 'OPEN SOURCE',
       posted: 'Just posted',
       badges: [
-        { label: 'Open Source', variant: 'default' },
-        { label: 'Remote', variant: 'secondary' },
+        { label: 'Open Source', variant: 'default', icon: 'code' },
+        { label: 'Remote', variant: 'secondary', icon: 'globe' },
       ],
     },
     {
@@ -152,12 +161,15 @@ export class App {
       logo: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png',
       avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Maya',
       recruiter: 'Maya Patel',
+      recruiterTitle: 'REPOSITORY OWNER',
+      description: 'Help improve developer experience for millions of developers worldwide.',
       color: '#b8a4ff',
       salary: '$90K – $120K',
+      salaryMeta: 'USD · YEARLY',
       posted: '2d ago',
       badges: [
-        { label: 'Part-time', variant: 'warning' },
-        { label: 'Remote', variant: 'secondary' },
+        { label: 'Part-time', variant: 'warning', icon: 'clock' },
+        { label: 'Remote', variant: 'secondary', icon: 'globe' },
       ],
     },
   ];
